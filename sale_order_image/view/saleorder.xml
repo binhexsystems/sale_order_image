@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="sales_order_imagen_form" model="ir.ui.view">
+        <field name="name">sale.imagen.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@name='other_information']" position="after">
+                   <page string="Image" name="imagenes">
+                    <group>
+                <field name="imagen_order">
+                        <tree delete="1">
+                            <field name="name" readonly="False"/>
+                        </tree>
+
+                        <form string= "Add image">
+                            <group>
+
+
+
+                            <field name="name"/>
+                            <field name="image"/>
+                             
+                            </group>
+                        </form>
+                </field>
+                        </group>
+                </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>
+
+<!--     <field name="partner_id" widget="res_partner_many2one" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1, 'show_vat': True}" options="{&quot;always_reload&quot;: True}"/>
+    <field name="partner_invoice_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'invoice'}" options="{&quot;always_reload&quot;: True}"/>
+    <field name="partner_shipping_id" groups="sale.group_delivery_invoice_address" context="{'default_type':'delivery'}" options="{&quot;always_reload&quot;: True}"/>
+                         -->

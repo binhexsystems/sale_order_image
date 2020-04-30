@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+	
+<data>
+<template id="saleorder_image" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@t-if='doc.signature']" position="after">
+      		<div t-if="doc.imagen_order">
+      		<p style="page-break-before:always;">
+      		<style>
+                .title{
+                    font-weight: bold;
+                    font-size: 16px;
+                    }
+                .center{
+                     text-align: center;
+                     }
+                .h2{
+                     page-break-inside: avoid;
+                    
+                    }
+                }
+            </style>
+
+             
+        <div class="center">
+            	<p style="color: #01375E;font-size:16px;font-weight: bold;">Annex: Images</p><br/><br/>
+	            <t t-set="imagenes" t-value="0"/>
+        				<t t-foreach="doc.imagen_order" t-as="line">
+  
+                      <div class="h2">
+            					 <span class="title" t-field="doc.imagen_order[line_index].name"/><br/>
+                       <img class="iman" t-att-src="image_data_uri(doc.imagen_order[line_index].image)" style="max-height: 8cm; max-width: 16cm;"/><br/><br/>
+                      </div>
+        				</t>
+			</div>
+		</p>
+	</div>
+   	</xpath>
+</template>
+</data>
+</odoo>

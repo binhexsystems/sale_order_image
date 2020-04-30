@@ -14,7 +14,7 @@
     'category': 'Sales',
     'version': '0.1',
     # any module necessary for this one to work correctly
-    'depends' : ['base_setup', 'product','sale'],
+    'depends' : ['product','sale'],
     # 'css':'static/css/knowstyle.css',
     # always loaded
     'data': [

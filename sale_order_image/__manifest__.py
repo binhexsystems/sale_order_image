@@ -6,25 +6,21 @@
        This module adds images to each quote/order, then they will be displayed in an annex to the odoo report""",
 
     'description': """
+     This module adds images to each quote/order, then they will be displayed in an annex to the odoo report
             """,
     'price': 30,
     'currency': 'EUR',
     'author': "Binhex Systems Solutions",
     'website': "https://www.binhex.es/",
     'category': 'Sales',
-    'version': '0.1',
-    # any module necessary for this one to work correctly
+    'license': 'AGPL-3',
+    'version': '1.0.0',
     'depends' : ['product','sale'],
-    # 'css':'static/css/knowstyle.css',
-    # always loaded
+    'images': ['static/description/banner.png'],
     'data': [
         'security/ir.model.access.csv',
         'reports/image_sale_order_report.xml', 
         'view/saleorder.xml'
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
     ],
     
     'installable': True,
